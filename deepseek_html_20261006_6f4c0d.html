@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Générateur de Reçus - Parking</title>
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#d32f2f">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="no-print">
+    <h1>Générateur de Reçus</h1>
+    <div class="controls">
+      <label for="dateInput">Date de validité :</label>
+      <input type="date" id="dateInput">
+      <button id="generateSingle">Générer ce jour</button>
+      <button id="generateWeek">Générer la semaine (Lun-Ven)</button>
+    </div>
+  </header>
+
+  <main id="ticketContainer">
+    <!-- Les tickets seront injectés ici par JavaScript -->
+  </main>
+
+  <!-- Modèle caché pour un seul ticket -->
+  <template id="ticketTemplate">
+    <div class="ticket-wrapper">
+      <div class="red-strip right-strip">
+        <span>PARKING RECEIPT</span>
+      </div>
+      
+      <div class="ticket-body">
+        <div class="header-section">
+          <h2>FACE VERS LE HAUT</h2>
+          <p class="exp-label">Date/Heure expiration</p>
+          <div class="big-date">
+            <span class="exp-time">11:59 PM</span>
+            <span class="exp-date"></span>
+          </div>
+        </div>
+
+        <div class="details-section">
+          <p><span>Date/Heure achat:</span> <span class="purchase-datetime"></span></p>
+          
+          <div class="grid-2">
+            <p>Dû: $17.00</p>
+            <p>Taux: JOUR MAX - 17.00$</p>
+            <p>Payé: $17.00</p>
+            <p>Pmt Type: CC (Swipe)</p>
+          </div>
+
+          <p>N° ticket: 00001003</p>
+          <p>N° série: 520119100281</p>
+          <p>Réglage: Lot 191</p>
+          <p>Nom: Lot 191-1</p>
+
+          <div class="grid-2 card-info">
+            <p>#****-6333, Visa</p>
+            <p>N° aut.: 073391</p>
+          </div>
+        </div>
+
+        <div class="dashed-line"></div>
+
+        <div class="receipt-section">
+          <h3>REÇU</h3>
+          <p>Date/Heure expiration: 11:59pm <span class="exp-date-short"></span></p>
+          <p>Date/Heure achat: 06:50am <span class="exp-date-short-2"></span></p>
+
+          <div class="grid-2">
+            <p>Dû: $17.00</p>
+            <p>Taux: JOUR MAX - 17.00$</p>
+            <p>Payé: $17.00</p>
+            <p>Pmt Type: CC (Swipe)</p>
+          </div>
+
+          <p>N° ticket: 00001003</p>
+          <p>Réglage: Lot 191</p>
+          <p>Nom: Lot 191-1</p>
+
+          <div class="grid-2 card-info">
+            <p>#****-6333, Visa</p>
+            <p>N° aut.: 073391</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="red-strip right-strip">
+        <span>PARKING RECEIPT</span>
+      </div>
+    </div>
+  </template>
+
+  <script src="script.js"></script>
+</body>
+</html>
